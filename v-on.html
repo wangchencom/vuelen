@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <button value="he" v-on:click="doit"> 点击1 </button>
+    <button value="he" @click="doit"> @点击1 </button>
+    <button value="he" @dblclick="changefood"> @点击1 </button>
+  </div>
+  <!-- 开发版本 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    var APP = new Vue({
+      //  挂载点选择器 高告诉 vue管理id 为app的元素
+      el: "#app",
+      // 数据对象
+      data:{
+        food:"香菜"
+      },
+      methods: {
+        doit: function () {
+          alert("hello");
+        },
+        changefood: function(){
+          console.log(this.food);
+          this.food += "hhc"
+        }
+      },
+    })
+  </script>
+</body>
+
+</html>

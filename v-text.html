@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id= "app"> 
+    <h2 v-text = "message + '!'">hello</h2>
+    <h2 v-text = "message + '?'">hello</h2>
+    <h2 >{{message + "!!??"}}</h2>
+  </div>
+  <!-- 开发版本 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+
+    var APP= new Vue({
+      //  挂载点选择器 高告诉 vue管理id 为app的元素
+      el:"#app",
+      // 数据对象
+      data:{
+        message:"你好 Vue"
+      }
+    })
+  </script>
+</body>
+
+</html>

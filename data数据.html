@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    {{message}}
+    <h4>{{school.name}}</h4>
+    <h1>{{campus}}</h1>
+    <ul>
+      <li>
+        {{campus[0]}}
+      </li>
+      <li>{{campus[1]}}</li>
+
+    </ul>
+  </div>
+  <!-- 开发版本 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+
+    var APP = new Vue({
+      //  挂载点选择器 高告诉 vue管理id 为app的元素
+      el: "#app",
+      // 数据对象
+      data: {
+        message: "你好 Vue!",
+        school: {
+          name: "小茗",
+          mobal: "400123456"
+        },
+        campus: ["北京", "上海", "和尚", "asd"]
+      }
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <img src="https://cn.vuejs.org/images/imooc-sponsor2.png" alt="">
+    <img :src="imgsrc">
+    <img :src="imgsrc" v-bind:title="imgTitle">
+  </div>
+  <!-- 开发版本 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+
+    var APP = new Vue({
+      //  挂载点选择器 高告诉 vue管理id 为app的元素
+      el: "#app",
+      // 数据对象
+      data: {
+        imgsrc: "https://cn.vuejs.org/images/imooc-sponsor2.png",
+        isActiive: true,
+        imgTitle: "你好"
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style type="text/css">
+  [v-cloak] {
+    display: none;
+  }
+</style>
+
+<body>
+  <div id="app">
+    {{message}}
+    <div v-pre> {{message}}</div>
+
+    <!-- 在模板中跳过vue的编译，直接输出原始值。就是在标签中加入v-pre就不会输出vue中的data值了。 -->
+    <!-- 直接输出{{message}} 代码 -->
+    <div v-cloak>在vue渲染完指定的整个DOM后才进行显示。它必须和CSS样式一起使用，</div>
+    <!-- 第一次加载完后之后不再变动 -->
+    <div v-once>第一次绑定的值：{{message}}</div>
+    <div><input type="text" v-model="message"></div>
+  </div>
+  <!-- 开发版本 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+
+    var APP = new Vue({
+      //  挂载点选择器 高告诉 vue管理id 为app的元素
+      el: "#app",
+      // 数据对象
+      data: {
+        message: "你好 Vue!"
+      }
+    })
+  </script>
+</body>
+
+</html>

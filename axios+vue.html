@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <input type="button" value="点击" @click="getmiss">
+    <p>
+      {{message}}
+    </p>
+  </div>
+  <!-- 开发版本 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+
+    var APP = new Vue({
+      //  挂载点选择器 高告诉 vue管理id 为app的元素
+      el: "#app",
+      // 数据对象
+      data: {
+        message: "很好笑的笑话"
+      },
+      methods: {
+        getmiss:function(){
+          var that = this;
+          axios.get("https://autumnfish.cn/api/joke").then(function(response){
+              console.log(response.data)
+              that.message = response.data
+          }),function(err){
+            console.log(err)
+          }
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

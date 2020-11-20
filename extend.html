@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Vue.extend 扩展实例构造器</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- 开发版本 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+  <h1>Vue.extend 扩展实例构造器</h1>
+  <hr>
+  <author></author>
+  <h1></h1>
+
+  <script type="text/javascript">
+    var authorExtend = Vue.extend({
+      template: "<p><a :href='authorUrl'>{{authorName}}</a></p>",
+      data() {
+        //data()=data:function(){}
+        return {
+          authorName: "进击的辣条",
+          authorUrl: "https://www.cnblogs.com/wyt007"
+        }
+      },
+    })
+    // 我们想象一个需求，需求是这样的，要在博客页面多处显示作者的网名，并在网名上直接有链接地址。
+    //我们希望在html中只需要写 ，这和自定义组件很像，但是他没有传递任何参数，只是个静态标签。
+
+
+    //这时html中的标签还是不起作用的，因为扩展实例构造器是需要挂载的，我们再进行一次挂载。
+    // new authorExtend().$mount('author');
+    new authorExtend().$mount('h1');
+  </script>
+</body>
+
+</html>

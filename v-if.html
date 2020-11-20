@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id= "app"> 
+    <input type = "button"  value = "切换show" @click="changeshow"></input>
+    <p v-if="ture">123</p>
+    <p v-if="isShow">123</p>
+    <p v-if="temp>=25">rerer</p>
+  </div>
+  <!-- 开发版本 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    var APP= new Vue({
+      //  挂载点选择器 高告诉 vue管理id 为app的元素
+      el:"#app",
+      // 数据对象
+      data:{
+        isShow:false,
+        temp:20
+      },
+      methods:{
+        changeshow : function(){
+          this.isShow = !this.isShow;
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

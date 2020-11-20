@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id= "app"> 
+    <input type="button" value = "切换show" @click="changeshow"></input>
+    <img src="https://cn.vuejs.org/images/dcloud.gif" alt="" v-show = "true">
+    <img src="https://cn.vuejs.org/images/dcloud.gif" alt="" v-show = "age>=18">
+    <img src="https://cn.vuejs.org/images/dcloud.gif" alt="" v-show = "isShow">
+  </div>
+  <!-- 开发版本 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+
+    var APP= new Vue({
+      //  挂载点选择器 高告诉 vue管理id 为app的元素
+      el:"#app",
+      // 数据对象
+      data:{
+        isShow:false,
+        age:18
+      },
+      methods:{
+        changeshow:function(){
+          this.isShow = !this.isShow;
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
